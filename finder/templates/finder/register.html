@@ -1,0 +1,38 @@
+{% extends 'finder/base.html' %}
+{% load static %}
+
+{% block title %}Register {{ type }}{% endblock %}
+
+{% block content %}
+<video autoplay muted loop id="bg-video">
+    <source src="{% static 'finder/Bg.mp4' %}" type="video/mp4">
+</video>
+
+<div class="container">
+    <div class="form-box">
+        <h2 class="mb-4">Register as {{ type }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+        
+        <p class="text-center mt-3">
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

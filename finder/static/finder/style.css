@@ -1,0 +1,73 @@
+/* This makes the video a full-screen, fixed background */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Puts the video behind all other content */
+    object-fit: cover; /* Fills the screen */
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 5rem 1rem; /* <-- Change this line */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Style the links on the homepage */
+.content-overlay a {
+    color: #4C9BFF; /* A nice blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.content-overlay a:hover {
+    text-decoration: underline;
+}
+
+/* Style the lists of items */
+.item-lists {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* White, slightly transparent background */
+    color: #333; /* Dark text for inside the white box */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-lists h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.item-lists ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.item-lists li {
+    margin-bottom: 10px;
+}
+
+/*
+  This new class will create a centered white box
+  for our login and registration forms.
+*/
+.form-box {
+    max-width: 500px;
+    margin: 100px auto; /* 100px from top, auto left/right */
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
